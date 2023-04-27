@@ -1,4 +1,4 @@
-import {RadioButton} from "./RadioButton"
-import {SearchBar} from "./SearchBar"
+import { SearchBar } from "./SearchBar"
+import { Switch } from "./Switch"
 
-export {RadioButton, SearchBar}
+export { SearchBar, Switch}
