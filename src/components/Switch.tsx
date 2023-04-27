@@ -23,14 +23,14 @@ export function Switch() {
         className="sr-only peer"
       />
 
-      <div className="w-40 h-10 bg-[#D9D9D9] peer-focus:outline-none rounded-full peer dark:bg-[#D9D9D9] peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-[#4F4F4F] after:border-[#4F4F4F] after:border after:rounded-full after:h-8 after:w-[4.75rem] after:transition-all dark:border-gray-600" />
+      <div className="w-[10.5rem] h-12 bg-[#D9D9D9] peer-focus:outline-none rounded-full peer dark:bg-[#D9D9D9] peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-1 after:left-1 after:bg-[#4F4F4F] after:border-[#4F4F4F] after:border after:rounded-full after:h-10 after:w-[5rem] after:transition-all dark:border-gray-600" />
       {/* peer-checked:bg-blue-600 */}
 
-      <span className="absolute left-6 text-base font-medium text-white dark:text-white peer-checked:text-black">
+      <span className="absolute left-[1.675rem] text-base font-medium text-white dark:text-white peer-checked:text-black">
         SVM
       </span>
 
-      <span className="absolute right-6 text-base font-medium text-black dark:text-black peer-checked:text-white">
+      <span className="absolute right-[1.675rem] text-base font-medium text-black dark:text-black peer-checked:text-white">
         KNN
       </span>
     </label>
