@@ -23,14 +23,16 @@ export function Switch() {
         className="sr-only peer"
       />
 
-      <div className="w-[10.5rem] h-12 bg-[#D9D9D9] peer-focus:outline-none rounded-full peer dark:bg-[#D9D9D9] peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-1 after:left-1 after:bg-[#4F4F4F] after:border-[#4F4F4F] after:border after:rounded-full after:h-10 after:w-[5rem] after:transition-all dark:border-gray-600" />
+      <div className="w-[10.5rem] h-12 bg-secondary-400 peer-focus:outline-none rounded-2xl peer peer-checked:after:translate-x-full  after:content-[''] after:absolute after:top-1 after:left-1 after:bg-secondary-600 after:border-secondary-600 after:border after:rounded-xl after:h-10 after:w-[5rem] after:transition-all" />
       {/* peer-checked:bg-blue-600 */}
 
-      <span className="absolute left-[1.675rem] text-base font-medium text-white dark:text-white peer-checked:text-black">
+      {/* Dark theme snippet */}
+      {/* <span className="absolute left-[1.675rem] text-base font-medium text-primary-100 dark:text-white peer-checked:text-black"> */}
+      <span className="absolute left-[1.675rem] text-base font-medium text-primary-100  peer-checked:text-secondary-200">
         SVM
       </span>
 
-      <span className="absolute right-[1.675rem] text-base font-medium text-black dark:text-black peer-checked:text-white">
+      <span className="absolute right-[1.675rem] text-base font-medium text-secondary-200 peer-checked:text-primary-100">
         KNN
       </span>
     </label>

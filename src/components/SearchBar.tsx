@@ -5,11 +5,11 @@ export function SearchBar() {
   return (
     <div className="flex relative items-center">
       <input
-        className="w-full h-12 px-5 py-1 sm:px-12 sm:pl-5 sm:py-3 flex-1 text-black bg-[#D9D9D9] rounded-full placeholder:text-black focus:bg-[#4F4F4F] focus:text-white  focus:outline-none focus:ring-[1px] focus:ring-[#4F4F4F] focus:placeholder:text-white"
-        placeholder="Search for anime..."
+        className="w-full h-12 px-5 py-1 sm:px-12 sm:pl-5 sm:py-3 flex-1 text-secondary-100 bg-secondary-300 rounded-2xl placeholder:text-secondary-200 outline-none"
+        placeholder="Type an anime you like..."
       />
 
-      <div className="flex absolute w-10 h-10 right-1 items-center justify-center bg-gray-500 rounded-full">
+      <div className="flex absolute w-10 h-10 right-1 items-center justify-center bg-primary-200 rounded-xl">
         <Image
           src={Icons.MagnifyingGlass}
           alt="Texto alternativo"
