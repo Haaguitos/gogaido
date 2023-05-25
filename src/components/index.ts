@@ -1,4 +1,7 @@
-import { SearchBar } from "./SearchBar"
-import { Switch } from "./Switch"
+import { EngineSwitch } from "./EngineSwitch";
+import { EngineTooltip } from "./EngineTooltip";
+import { Header} from "./Header";
+import { SearchBar } from "./SearchBar";
+import { ThemeSwitch } from "./ThemeSwitch";
 
-export { SearchBar, Switch}
+export { EngineSwitch, EngineTooltip, Header, SearchBar, ThemeSwitch };
