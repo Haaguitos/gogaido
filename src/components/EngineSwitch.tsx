@@ -26,10 +26,7 @@ export function EngineSwitch() {
       after:content-[''] after:absolute after:top-1 after:left-1 after:bg-primary-500 after:border-primary-500 after:border after:rounded-xl after:h-10 after:w-[5rem] after:transition-all
       dark:bg-gray-500 dark:after:bg-gray-700 dark:after:border-gray-600"
       />
-      {/* peer-checked:bg-blue-600 */}
 
-      {/* Dark theme snippet */}
-      {/* <span className="absolute left-[1.675rem] text-base font-medium text-primary-100 dark:text-white peer-checked:text-black"> */}
       <span
         className="absolute left-[1.675rem] text-base font-medium text-white peer-checked:text-gray-300
       dark:text-primary-100 dark:peer-checked:text-gray300"
