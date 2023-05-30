@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,24 +8,29 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: "var(--font-hk)",
       },
       colors: {
-        "pink": {
-          "50": "#f5ecf4",
-          "100": "#ebd9e8",
-          "200": "#d6b3d2",
-          "300": "#c28cbb",
-          "400": "#ad66a5",
-          "500": "#99408e",
-          "600": "#7a3372",
-          "700": "#5c2655",
-          "800": "#3d1a39",
-          "900": "#1f0d1c"
-        }
+        "primary": {
+          "100": "#B283FF",
+          "200": "#936BE7",
+          "300": "#7948C8",
+          "400": "#532F9F",
+          "500": "#7464A4"
+        },
+        gray: {
+          "50": "#EFF0F8",
+          "100": "#E8E9F1",
+          "200": "#A6A9B0",
+          "300": "#767A86",
+          "400": "#32394B",
+          "500": "#232938",
+          "600": "#1C202B",
+          "700": "#13151C",
+        },
+        "success": "#72E5AE",
+        "error": "#E37777"
       }
     },
   },
