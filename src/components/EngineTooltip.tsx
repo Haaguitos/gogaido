@@ -9,13 +9,8 @@ export function EngineTooltip() {
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <div className="flex relative items-center">
-            <Image
-              src={Icons.QuestionCircle}
-              alt="Search engine"
-              width={24}
-              height={24}
-            />
+          <div className="group flex relative items-center cursor-pointer">
+            <Icons.QuestionCircle className="[&>circle]:stroke-gray-300 [&>path]:fill-gray-300 group-hover:[&>circle]:stroke-primary-100 group-hover:[&>path]:fill-primary-100" />
           </div>
         </Tooltip.Trigger>
 

@@ -15,7 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${hk.variable} font-sans`}>{children}</body>
+      <body
+        className={`${hk.variable} font-sans`}
+        suppressHydrationWarning={true}
+      >
+        {children}
+      </body>
     </html>
   );
 }

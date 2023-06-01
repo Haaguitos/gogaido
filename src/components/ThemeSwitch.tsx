@@ -14,12 +14,8 @@ export function ThemeSwitch() {
       className="flex w-12 h-12 bg-primary-500 items-center justify-center rounded-2xl
       dark:bg-gray-700"
     >
-      <Image
-        src={colorMode === "light" ? Icons.Moon : Icons.Sun}
-        alt="Change theme"
-        width={24}
-        height={24}
-      />
+      <Icons.Sun className="rotate-0 scale-100 transition-all fill-white dark:-rotate-90 dark:scale-0 hover:fill-primary-100" />
+      <Icons.Moon className="absolute rotate-90 scale-0 transition-all fill-primary-200 dark:rotate-0 dark:scale-100 hover:fill-primary-100" />
     </button>
   );
 }

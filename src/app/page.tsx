@@ -1,3 +1,5 @@
+"use client";
+
 import {
   EngineSwitch,
   EngineTooltip,
@@ -5,12 +7,34 @@ import {
   SearchBar,
   ThemeSwitch,
 } from "@/components";
+import { api, fetcher } from "@/libs/axios";
+import { useEffect } from "react";
+
+import useSWR from "swr";
 
 export default function Home() {
+  // const { data, error, isLoading } = useSWR(
+  //   fetcher("anime_finder", "POST", {
+  //     query: "shigatsu wa kimi no uso",
+  //     recommendation_size: 10,
+  //     mode: "SVM",
+  //   })
+  // );
+
+  useEffect(() => {
+    api.post("anime_finder", {
+      query: "shigatsu wa kimi no uso",
+      recommendation_size: 10,
+      mode: "SVM",
+    });
+    // api.get("");
+  }, []);
+
   return (
-    <main className="flex bg-white min-h-screen flex-col items-center dark:bg-gray-600">
-      <div className="relative flex flex-col w-full max-w-4xl min-h-screen items-center justify-center">
-        <Header />
+    <div className="flex flex-col bg-white min-h-screen items-center dark:bg-gray-600">
+      <Header />
+
+      <main className="flex flex-col w-full max-w-4xl pt-40">
         <h1 className="text-[2.5rem] font-black text-primary-100 self-start">
           Find your next anime
         </h1>
@@ -35,7 +59,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Header() {
   return (
-    <div className="absolute top-8 flex w-full justify-between">
+    <header className="flex w-full max-w-4xl justify-between py-8">
       <Image src={Images.Logo} alt="Gogaido" width={128} height={86} />
 
       <h3 className="text-sm text-gray-200 text-right self-end">
@@ -38,6 +38,6 @@ export function Header() {
         <br />
         Buy us a coffee &#x2615;
       </h3>
-    </div>
+    </header>
   );
 }

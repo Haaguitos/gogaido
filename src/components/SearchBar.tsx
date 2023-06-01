@@ -1,7 +1,11 @@
 import { Icons } from "@/assets";
 import Image from "next/image";
 
-export function SearchBar() {
+interface SearchBarProps {
+  loading?: boolean;
+}
+
+export function SearchBar({ loading }: SearchBarProps) {
   return (
     <div className="flex relative items-center">
       <input
@@ -9,14 +13,13 @@ export function SearchBar() {
         placeholder="Type an anime you like..."
       />
 
-      <div className="flex absolute w-10 h-10 right-1 items-center justify-center bg-primary-200 rounded-xl">
-        <Image
-          src={Icons.MagnifyingGlass}
-          alt="Search"
-          width={20}
-          height={20}
-        />
-      </div>
+      {loading ? (
+        <Icons.Spinner className="flex absolute right-2 animate-spin fill-primary-100" />
+      ) : (
+        <button className="group flex absolute cursor-pointer w-10 h-10 right-1 items-center justify-center bg-primary-200 rounded-xl hover:bg-white focus:bg-gray-700">
+          <Icons.MagnifyingGlass className="stroke-white group-hover:stroke-primary-100 group-focus:stroke-primary-100" />
+        </button>
+      )}
     </div>
   );
 }
