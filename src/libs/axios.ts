@@ -2,26 +2,29 @@ import axios, { AxiosResponse, AxiosError, Method } from 'axios';
 
 export const api = axios.create({
   baseURL: 'http://airi.space',
-  // baseURL: 'https://servicodados.ibge.gov.br/api/v1/localidades/distritos?orderBy=nome',
-  // headers: {
-  //   'Content-Type': 'application/json',
-  // },
-  // withCredentials: false,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  withCredentials: false,
 });
 
 interface ErrorResponse {
   message: string;
+};
+
+interface Anime {
+  name: string;
+  image: string;
+  genres: string[];
 }
 
-// export const fetcher = (url: string, body: any) => api.get(url, body).then(res => res.data);
-
-export const fetcher = async <T>(
+export const fetcher = async (
   url: string,
   method: Method,
   body?: any
-): Promise<T> => {
+): Promise<Anime[]> => {
   try {
-    const response: AxiosResponse<T> = await api.request<T>({
+    const response: AxiosResponse<Anime[]> = await api.request<Anime[]>({
       url,
       method,
       data: body,

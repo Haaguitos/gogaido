@@ -1,6 +1,9 @@
 "use client";
 
 import {
+  AnimeCard,
+  AnimesSection,
+  Callout,
   EngineSwitch,
   EngineTooltip,
   Header,
@@ -8,44 +11,54 @@ import {
   ThemeSwitch,
 } from "@/components";
 import { api, fetcher } from "@/libs/axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import useSWR from "swr";
 
-export default function Home() {
-  // const { data, error, isLoading } = useSWR(
-  //   fetcher("anime_finder", "POST", {
-  //     query: "shigatsu wa kimi no uso",
-  //     recommendation_size: 10,
-  //     mode: "SVM",
-  //   })
-  // );
+interface Anime {
+  name: string;
+  image: string;
+  genres: string[];
+}
 
-  useEffect(() => {
-    api.post("anime_finder", {
-      query: "shigatsu wa kimi no uso",
-      recommendation_size: 10,
-      mode: "SVM",
-    });
-    // api.get("");
-  }, []);
+export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const { data, error, isLoading } = useSWR<Anime[]>(
+    searchQuery ? ["anime_finder", searchQuery] : null,
+    () =>
+      fetcher("anime_finder", "POST", {
+        query: searchQuery,
+        recommendation_size: 30,
+        mode: "KNN",
+      })
+  );
 
   return (
     <div className="flex flex-col bg-white min-h-screen items-center dark:bg-gray-600">
       <Header />
 
-      <main className="flex flex-col w-full max-w-4xl pt-40">
-        <h1 className="text-[2.5rem] font-black text-primary-100 self-start">
-          Find your next anime
-        </h1>
-        <h2 className="text-base text-gray-400 self-start mb-9 dark:text-gray-300">
-          Recommendations based on what you like
-        </h2>
+      <main
+        className={`flex flex-col w-full max-w-4xl ${
+          data ? "pt-8" : "pt-40"
+        } transition-all duration-5000`}
+      >
+        <Callout hasData={!!data} />
 
-        <div className="flex flex-col gap-4 w-full justify-center">
-          <SearchBar />
+        <div
+          className={`flex flex-col gap-4 w-full justify-center duration-5000 transition-all`}
+        >
+          <SearchBar
+            onSubmit={(animeName) => setSearchQuery(animeName)}
+            loading={isLoading}
+            hasData={!!data}
+          />
 
-          <div className="flex flex-row gap-2 items-center justify-between">
+          <div
+            className={`${
+              data && "-translate-y-16"
+            } flex flex-row gap-2 items-center justify-between duration-5000 transition-all`}
+          >
             <ThemeSwitch />
 
             <div className="flex flex-row gap-6 items-center">
@@ -60,6 +73,8 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {!!data && <AnimesSection animes={data} />}
     </div>
   );
 }

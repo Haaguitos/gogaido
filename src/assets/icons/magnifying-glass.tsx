@@ -14,9 +14,9 @@ export function MagnifyingGlass({ title, className, onClick }: SVGIcon) {
       <title>{title || "Search"}</title>
       <path
         d="M20 7.95085C20 11.7839 16.8718 14.9017 13 14.9017C9.12819 14.9017 6 11.7839 6 7.95085C6 4.1178 9.12819 1 13 1C16.8718 1 20 4.1178 20 7.95085Z"
-        stroke-width="2"
+        strokeWidth="2"
       />
-      <path d="M8.12366 12.9201L1.00002 20" stroke-width="2" />
+      <path d="M8.12366 12.9201L1.00002 20" strokeWidth="2" />
     </svg>
   );
 }
