@@ -11,7 +11,7 @@ export function Callout({ hasData }: Callout) {
       initial={{ opacity: 1, height: "7.5rem" }}
       animate={hasData && { opacity: 0, y: "-10rem", height: 0 }}
       transition={{
-        duration: 5,
+        duration: 1.2,
         type: "spring",
         stiffness: 100,
         damping: 15,

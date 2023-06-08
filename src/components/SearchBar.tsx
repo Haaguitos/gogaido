@@ -25,7 +25,7 @@ export function SearchBar({ loading, onSubmit, hasData }: SearchBarProps) {
       onSubmit={handleSubmit}
       className={`${
         hasData && "translate-y-16"
-      } flex relative items-center duration-5000 transition-all z-10`}
+      } flex relative items-center duration-[1200ms] transition-all z-10`}
     >
       <input
         className="w-full h-12 px-5 py-1 sm:px-12 sm:pl-5 sm:py-3 flex-1 text-gray-300 bg-gray-100 rounded-2xl placeholder:text-gray-200 outline-none dark:bg-gray-400 dark:placeholder:text-gray-300 dark:text-gray-200"
@@ -39,9 +39,9 @@ export function SearchBar({ loading, onSubmit, hasData }: SearchBarProps) {
       ) : (
         <button
           type="submit"
-          className="group flex absolute cursor-pointer w-10 h-10 right-1 items-center justify-center bg-primary-200 rounded-xl hover:bg-white focus:bg-gray-700"
+          className="group flex absolute cursor-pointer w-10 h-10 right-1 items-center justify-center bg-primary-200 rounded-xl hover:bg-primary-500 dark:hover:bg-white focus:bg-gray-50 dark:focus:bg-gray-700"
         >
-          <Icons.MagnifyingGlass className="stroke-white group-hover:stroke-primary-100 group-focus:stroke-primary-100" />
+          <Icons.MagnifyingGlass className="stroke-white group-hover:stroke-primary-100 dark:group-hover:stroke-primary-100 group-focus:stroke-primary-100 dark:group-focus:stroke-primary-100" />
         </button>
       )}
     </motion.form>
