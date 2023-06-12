@@ -1,29 +1,33 @@
 "use client";
 
 import {
-  AnimeCard,
   AnimesSection,
   Callout,
-  EngineSwitch,
-  EngineTooltip,
   Header,
   SearchBar,
   ThemeSwitch,
 } from "@/components";
 import { fetcher } from "@/libs/axios";
+import { Anime } from "@/types";
 import { useState } from "react";
 
 import useSWR from "swr";
 
-interface Anime {
-  name: string;
-  image: string;
-  genres: string[];
-}
-
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [engine, setEngine] = useState<"SVM" | "KNN">("SVM");
+
+  // const { data, error, isLoading } = useSWR<Anime[]>(
+  //   searchQuery || (engine && engine && searchQuery)
+  //     ? ["anime_finder", searchQuery, engine]
+  //     : null,
+  //   () =>
+  //     fetcher("anime_finder", "POST", {
+  //       query: searchQuery,
+  //       recommendation_size: 30,
+  //       mode: "SVM",
+  //     })
+  // );
 
   const { data, error, isLoading } = useSWR<Anime[]>(
     searchQuery ? ["anime_finder", searchQuery] : null,
@@ -31,7 +35,7 @@ export default function Home() {
       fetcher("anime_finder", "POST", {
         query: searchQuery,
         recommendation_size: 30,
-        mode: engine,
+        mode: "KNN",
       })
   );
 
@@ -62,7 +66,8 @@ export default function Home() {
           >
             <ThemeSwitch />
 
-            <div className="flex flex-row gap-6 items-center">
+            {/* Escondido enquanto não for possível mudar para SVM   */}
+            {/* <div className="flex flex-row gap-6 items-center">
               <span className="text-base text-gray-200 dark:text-gray-300">
                 SEARCH ENGINE:
               </span>
@@ -70,7 +75,7 @@ export default function Home() {
               <EngineSwitch setEngine={setEngine} engine={engine} />
 
               <EngineTooltip />
-            </div>
+            </div> */}
           </div>
         </div>
       </main>

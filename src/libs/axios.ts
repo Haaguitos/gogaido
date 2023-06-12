@@ -1,3 +1,4 @@
+import { Anime } from '@/types';
 import axios, { AxiosResponse, AxiosError, Method } from 'axios';
 
 export const api = axios.create({
@@ -11,12 +12,6 @@ export const api = axios.create({
 interface ErrorResponse {
   message: string;
 };
-
-interface Anime {
-  name: string;
-  image: string;
-  genres: string[];
-}
 
 export const fetcher = async (
   url: string,

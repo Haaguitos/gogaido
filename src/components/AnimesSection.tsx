@@ -1,11 +1,8 @@
+import { Anime } from "@/types";
 import { AnimeCard } from "./AnimeCard";
 
 interface AnimesSection {
-  animes: {
-    name: string;
-    image: string;
-    genres: string[];
-  }[];
+  animes: Anime[];
 }
 
 export function AnimesSection({ animes }: AnimesSection) {
@@ -18,7 +15,7 @@ export function AnimesSection({ animes }: AnimesSection) {
 
       <div className="grid grid-cols-5 pt-6 pb-12 gap-6 w-full">
         {animes.slice(0, 5).map((anime) => (
-          <AnimeCard data={anime} key={anime.name} />
+          <AnimeCard anime={anime} key={anime.name} />
         ))}
       </div>
 
@@ -30,8 +27,8 @@ export function AnimesSection({ animes }: AnimesSection) {
       </span>
 
       <div className="grid grid-cols-5 pt-6 pb-12 gap-6 w-full">
-        {animes.slice(5).map((anime) => (
-          <AnimeCard data={anime} key={anime.name} />
+        {animes.slice(5, 30).map((anime) => (
+          <AnimeCard anime={anime} key={anime.name} />
         ))}
       </div>
     </section>

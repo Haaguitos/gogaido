@@ -14,7 +14,7 @@ export function EngineSwitch({ engine, setEngine }: EngineSwitch) {
       <input
         type="checkbox"
         value={engine}
-        onChange={(e) => handleValueOnChange()}
+        onChange={() => handleValueOnChange()}
         className="sr-only peer"
       />
 
