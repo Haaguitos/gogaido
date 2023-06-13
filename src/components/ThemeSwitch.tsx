@@ -1,8 +1,6 @@
 "use client";
 
 import { Icons } from "@/assets";
-import Image from "next/image";
-import { useState } from "react";
 import useColorMode from "../../hooks/useColorMode";
 
 export function ThemeSwitch() {

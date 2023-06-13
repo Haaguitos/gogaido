@@ -8,6 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        overlayShow: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'overlayShow': 'overlayShow 400ms',
+      },
       fontFamily: {
         sans: "var(--font-hk)",
       },

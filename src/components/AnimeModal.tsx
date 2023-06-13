@@ -1,6 +1,5 @@
 import { Anime } from "@/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import Image from "next/image";
 
 interface AnimeModal {
   setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +10,7 @@ export function AnimeModal({ anime, setIsOpenModal }: AnimeModal) {
   return (
     <Dialog.Root onOpenChange={setIsOpenModal} open={true}>
       <Dialog.Portal className="overflow-scroll py-16">
-        <Dialog.Overlay className="fixed bg-gray-700/40 inset-0 overflow-y-auto grid py-40 place-items-center z-50">
+        <Dialog.Overlay className="animate-overlayShow fixed bg-gray-700/40 inset-0 overflow-y-auto grid py-40 place-items-center z-50">
           <Dialog.Content
             className={`flex-col w-full max-w-4xl pb-20 bg-gray-500/95 backdrop-blur-lg rounded-lg`}
           >
