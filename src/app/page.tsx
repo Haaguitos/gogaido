@@ -17,6 +17,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [engine, setEngine] = useState<"SVM" | "KNN">("SVM");
 
+  // Sem busca pela engine no momento
   // const { data, error, isLoading } = useSWR<Anime[]>(
   //   searchQuery || (engine && engine && searchQuery)
   //     ? ["anime_finder", searchQuery, engine]
