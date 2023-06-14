@@ -1,11 +1,15 @@
-import MagnifyingGlass from "./magnifying-glass.svg";
-import Moon from "./moon.svg";
-import QuestionCircle from "./question-circle.svg";
-import Sun from "./sun.svg";
+import { MagnifyingGlass } from "./magnifying-glass";
+import { Moon } from "./moon";
+import { QuestionCircle } from "./question-circle";
+import { Spinner } from "./spinner";
+import { Star } from "./star";
+import { Sun } from "./sun";
 
 export const Icons = {
   MagnifyingGlass,
   Moon,
   QuestionCircle,
+  Spinner,
+  Star,
   Sun,
 };

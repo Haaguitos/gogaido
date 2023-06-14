@@ -1,41 +1,87 @@
+"use client";
+
 import {
-  EngineSwitch,
-  EngineTooltip,
+  AnimesSection,
+  Callout,
   Header,
   SearchBar,
   ThemeSwitch,
 } from "@/components";
+import { fetcher } from "@/libs/axios";
+import { Anime } from "@/types";
+import { useState } from "react";
+
+import useSWR from "swr";
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [engine, setEngine] = useState<"SVM" | "KNN">("SVM");
+
+  // Sem busca pela engine no momento
+  // const { data, error, isLoading } = useSWR<Anime[]>(
+  //   searchQuery || (engine && engine && searchQuery)
+  //     ? ["anime_finder", searchQuery, engine]
+  //     : null,
+  //   () =>
+  //     fetcher("anime_finder", "POST", {
+  //       query: searchQuery,
+  //       recommendation_size: 30,
+  //       mode: "SVM",
+  //     })
+  // );
+
+  const { data, error, isLoading } = useSWR<Anime[]>(
+    searchQuery ? ["anime_finder", searchQuery] : null,
+    () =>
+      fetcher("anime_finder", "POST", {
+        query: searchQuery,
+        recommendation_size: 30,
+        mode: "KNN",
+      })
+  );
+
   return (
-    <main className="flex bg-white min-h-screen flex-col items-center dark:bg-gray-600">
-      <div className="relative flex flex-col w-full max-w-4xl min-h-screen items-center justify-center">
-        <Header />
-        <h1 className="text-[2.5rem] font-black text-primary-100 self-start">
-          Find your next anime
-        </h1>
-        <h2 className="text-base text-gray-400 self-start mb-9 dark:text-gray-300">
-          Recommendations based on what you like
-        </h2>
+    <div className="flex flex-col bg-white min-h-screen items-center dark:bg-gray-600">
+      <Header />
 
-        <div className="flex flex-col gap-4 w-full justify-center">
-          <SearchBar />
+      <main
+        className={`flex flex-col w-full max-w-4xl ${
+          data ? "pt-8" : "pt-40"
+        } transition-all duration-[1200ms]`}
+      >
+        <Callout hasData={!!data} />
 
-          <div className="flex flex-row gap-2 items-center justify-between">
+        <div
+          className={`flex flex-col gap-4 w-full justify-center duration-[1200ms] transition-all`}
+        >
+          <SearchBar
+            onSubmit={(animeName) => setSearchQuery(animeName)}
+            loading={isLoading}
+            hasData={!!data}
+          />
+
+          <div
+            className={`${
+              data && "-translate-y-16"
+            } flex flex-row gap-2 items-center justify-between duration-[1200ms] transition-all`}
+          >
             <ThemeSwitch />
 
-            <div className="flex flex-row gap-6 items-center">
-              <span className="text-base text-gray-400 dark:text-gray-300">
+            {/* Escondido enquanto não for possível mudar para SVM   */}
+            {/* <div className="flex flex-row gap-6 items-center">
+              <span className="text-base text-gray-200 dark:text-gray-300">
                 SEARCH ENGINE:
               </span>
 
-              <EngineSwitch />
+              <EngineSwitch setEngine={setEngine} engine={engine} />
 
               <EngineTooltip />
-            </div>
+            </div> */}
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+
+      {!!data && <AnimesSection animes={data} />}
+    </div>
   );
 }

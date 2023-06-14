@@ -1,7 +1,6 @@
 "use client";
 
 import { Icons } from "@/assets";
-import Image from "next/image";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 export function EngineTooltip() {
@@ -9,25 +8,20 @@ export function EngineTooltip() {
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <div className="flex relative items-center">
-            <Image
-              src={Icons.QuestionCircle}
-              alt="Search engine"
-              width={24}
-              height={24}
-            />
+          <div className="group flex relative items-center cursor-pointer">
+            <Icons.QuestionCircle className="[&>circle]:stroke-gray-300 [&>path]:fill-gray-300 group-hover:[&>circle]:stroke-primary-100 group-hover:[&>path]:fill-primary-100" />
           </div>
         </Tooltip.Trigger>
 
         <Tooltip.Portal>
           <Tooltip.Content
-            className="TooltipContent"
+            className="z-20"
             sideOffset={24}
             side="right"
             align="start"
             alignOffset={-16}
           >
-            <div className="flex flex-col w-64 gap-4 bg-gray-50 p-6 rounded-2xl dark:bg-gray-500">
+            <div className="flex flex-col w-64 gap-4 bg-gray-50 p-6 rounded-2xl dark:bg-gray-500 z-30">
               <p className="text-sm text-gray-300">
                 <b className="dark:text-gray-200">SVM</b> usa Machine Learning
                 para classificar os animes exibidos em categorias ou grupos. Ele
