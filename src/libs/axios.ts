@@ -2,7 +2,7 @@ import { Anime } from '@/types';
 import axios, { AxiosResponse, AxiosError, Method } from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://airi.space',
+  baseURL: 'https://airi.space',
   headers: {
     'Content-Type': 'application/json',
   },
