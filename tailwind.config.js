@@ -7,6 +7,16 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    borderRadius: {
+      'none': '0',
+      'sm': '0.125rem',
+      DEFAULT: '0.25rem',
+      'md': '0.375rem',
+      'lg': '0.5rem',
+      "xl": "0.875rem",
+      "2xl": "1.125rem",
+      'full': '9999px',
+    },
     extend: {
       keyframes: {
         overlayShow: {
