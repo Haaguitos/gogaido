@@ -47,8 +47,6 @@ export default function Home() {
     }
   }, [data]);
 
-  console.log("animesData", animesData);
-
   return (
     <div className="flex flex-col bg-white min-h-screen items-center dark:bg-gray-600 px-6">
       <Header />

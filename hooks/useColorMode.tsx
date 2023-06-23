@@ -4,7 +4,10 @@ import useLocalStorage from "./useLocalStorage";
 const useColorMode = () => {
   const [colorMode, setColorMode] = useLocalStorage(
     "color-theme",
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+    typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light"
   );
 
   useEffect(() => {
