@@ -43,7 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     if (data) {
-      setAnimesData(data); // Atualiza a sua variável quando receber os dados
+      setAnimesData(data);
     }
   }, [data]);
 
@@ -53,7 +53,7 @@ export default function Home() {
 
       <main
         className={`flex flex-col w-full max-w-[67.5rem] ${
-          animesData ? "pt-8" : "pt-40"
+          animesData ? "pt-8" : "pt-[20vh] 2xl:pt-[25vh]"
         } transition-all duration-[1200ms]`}
       >
         <Callout hasData={!!animesData} />
