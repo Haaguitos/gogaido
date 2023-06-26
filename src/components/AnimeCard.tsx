@@ -21,10 +21,6 @@ export function AnimeCard({ anime }: AnimeCard) {
         isOpen={isOpenModal}
       />
 
-      {/* <div
-        className="group relative flex h-[10.5rem] w-28 rounded-2xl gap-4 overflow-hidden cursor-pointer select-none md:h-[10.5rem] md:w-28 lg:h-[13.5rem] lg:w-36 xl:h-60 xl:w-40"
-        onClick={() => setIsOpenModal(true)}
-      > */}
       <div
         className="group relative flex aspect-[2/3] max-h-60 rounded-2xl gap-4 overflow-hidden cursor-pointer select-none"
         onClick={() => setIsOpenModal(true)}
