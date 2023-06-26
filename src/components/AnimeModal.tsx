@@ -1,7 +1,6 @@
 import { Icons } from "@/assets";
 import { Anime } from "@/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import { useRouter } from "next/router";
 
 interface AnimeModal {
   isOpen: boolean;
