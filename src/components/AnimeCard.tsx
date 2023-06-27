@@ -27,7 +27,7 @@ export function AnimeCard({ anime }: AnimeCard) {
       >
         <div className="absolute bg-primary-100 hidden p-4 h-full w-full z-10 group-hover:flex group-hover:flex-col dark:bg-transparent">
           <div className="flex flex-col w-full gap-1 sm:flex-row">
-            <span className="block w-full text-xs text-white font-extrabold uppercase px-1 border-2 border-white rounded-md truncate dark:text-primary-100 dark:border-primary-100 sm:w-fit">
+            <span className="block w-fit max-w-full text-xs text-white font-extrabold uppercase px-1 border-2 border-white rounded-md truncate dark:text-primary-100 dark:border-primary-100 sm:w-fit">
               {anime.data.genres[0]?.name || "N/A"}
             </span>
 
