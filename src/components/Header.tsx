@@ -33,13 +33,19 @@ export function Header() {
           target="_blank"
           rel="noreferrer"
           className="underline hover:text-gray-400 dark:hover:text-gray-100"
-          href="
-          https://github.com/GabrielDornelles"
+          href="https://github.com/GabrielDornelles"
         >
           @GabrielDornelles
         </a>
         <br />
-        Buy us a coffee &#x2615;
+        <a
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:text-gray-400 dark:hover:text-gray-100"
+          href="https://ko-fi.com/gogaido"
+        >
+          Buy us a coffee &#x2615;
+        </a>
       </h3>
     </header>
   );
