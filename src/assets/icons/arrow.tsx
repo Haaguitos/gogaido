@@ -1,6 +1,6 @@
 import { SVGIcon } from "@/types";
 
-export function Arrow({ title, className, onClick }: SVGIcon) {
+export function Arrow({ title, className }: SVGIcon) {
   return (
     <svg
       width="12"
@@ -8,7 +8,6 @@ export function Arrow({ title, className, onClick }: SVGIcon) {
       viewBox="0 0 12 11"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={onClick}
       className={className || "fill-primary-100"}
     >
       <title>{title || "Arrow"}</title>
