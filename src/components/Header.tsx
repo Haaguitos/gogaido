@@ -15,7 +15,7 @@ export function Header() {
         />
       </Link>
 
-      <h3 className="text-sm text-gray-200 text-right self-end">
+      <h3 className="text-sm text-gray-300 text-right self-end">
         Made with <span className="text-red-500">&#x2764;</span> by{" "}
         <a
           target="_blank"
