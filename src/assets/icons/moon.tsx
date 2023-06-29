@@ -1,6 +1,6 @@
 import { SVGIcon } from "@/types";
 
-export function Moon({ title, className, onClick }: SVGIcon) {
+export function Moon({ title, className }: SVGIcon) {
   return (
     <svg
       width="24"
@@ -8,7 +8,6 @@ export function Moon({ title, className, onClick }: SVGIcon) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={onClick}
       className={className || "fill-primary-200"}
     >
       <title>{title || "Moon"}</title>

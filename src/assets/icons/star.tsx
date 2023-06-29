@@ -1,6 +1,6 @@
 import { SVGIcon } from "@/types";
 
-export function Star({ title, className, onClick }: SVGIcon) {
+export function Star({ title, className }: SVGIcon) {
   return (
     <svg
       width="9"
@@ -8,7 +8,6 @@ export function Star({ title, className, onClick }: SVGIcon) {
       viewBox="0 0 9 8"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={onClick}
       className={className || "fill-white"}
     >
       <title>{title || "Star"}</title>

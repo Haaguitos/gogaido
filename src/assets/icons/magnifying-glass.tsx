@@ -1,6 +1,6 @@
 import { SVGIcon } from "@/types";
 
-export function MagnifyingGlass({ title, className, onClick }: SVGIcon) {
+export function MagnifyingGlass({ title, className }: SVGIcon) {
   return (
     <svg
       width="21"
@@ -8,7 +8,6 @@ export function MagnifyingGlass({ title, className, onClick }: SVGIcon) {
       viewBox="0 0 21 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={onClick}
       className={className || "fill-primary-100"}
     >
       <title>{title || "Search"}</title>

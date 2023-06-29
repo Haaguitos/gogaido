@@ -9,11 +9,12 @@ import {
 } from "@/components";
 import { fetcher } from "@/libs/axios";
 import { Anime } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import useSWR from "swr";
 
 export default function Home() {
+  const [animesData, setAnimesData] = useState<Anime[]>();
   const [searchQuery, setSearchQuery] = useState("");
   const [engine, setEngine] = useState<"SVM" | "KNN">("SVM");
 
@@ -40,16 +41,22 @@ export default function Home() {
       })
   );
 
+  useEffect(() => {
+    if (data) {
+      setAnimesData(data);
+    }
+  }, [data]);
+
   return (
-    <div className="flex flex-col bg-white min-h-screen items-center dark:bg-gray-600">
+    <div className="flex flex-col bg-white min-h-screen items-center dark:bg-gray-600 px-6">
       <Header />
 
       <main
-        className={`flex flex-col w-full max-w-4xl ${
-          data ? "pt-8" : "pt-40"
+        className={`flex flex-col w-full max-w-[67.5rem] ${
+          animesData ? "pt-8" : "pt-[20vh] 2xl:pt-[25vh]"
         } transition-all duration-[1200ms]`}
       >
-        <Callout hasData={!!data} />
+        <Callout hasData={!!animesData} />
 
         <div
           className={`flex flex-col gap-4 w-full justify-center duration-[1200ms] transition-all`}
@@ -57,12 +64,12 @@ export default function Home() {
           <SearchBar
             onSubmit={(animeName) => setSearchQuery(animeName)}
             loading={isLoading}
-            hasData={!!data}
+            hasData={!!animesData}
           />
 
           <div
             className={`${
-              data && "-translate-y-16"
+              animesData && "-translate-y-16"
             } flex flex-row gap-2 items-center justify-between duration-[1200ms] transition-all`}
           >
             <ThemeSwitch />
@@ -81,7 +88,7 @@ export default function Home() {
         </div>
       </main>
 
-      {!!data && <AnimesSection animes={data} />}
+      {animesData && <AnimesSection animes={animesData} />}
     </div>
   );
 }
