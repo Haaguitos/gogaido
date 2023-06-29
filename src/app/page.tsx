@@ -93,7 +93,7 @@ export default function Home() {
       {!animesData && (
         <footer className="flex mt-auto pb-24">
           <h3 className="text-xs text-center text-gray-300 md:text-base">
-            This is an beta version.
+            This is a beta version.
             <br />
             Feel free to leave any feedbacks on our socials above.
           </h3>
