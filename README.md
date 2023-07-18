@@ -3,6 +3,8 @@
   <h1 align="center">gogaido</h1>
 </p>
 
+![image](https://github.com/Haaguitos/gogaido/assets/62682824/e8cb1245-7333-4586-a547-90fcd8ee5d49)
+
 <p align="center">A site that searches animes by comparing synopses and bringing the ones that would be most recommended to the user.</p>
 
 ## 📚 Table of Contents
