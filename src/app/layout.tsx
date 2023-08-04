@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Hanken_Grotesk } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const hk = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hk" });
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body
         className={`${hk.variable} font-sans`}
         suppressHydrationWarning={true}
