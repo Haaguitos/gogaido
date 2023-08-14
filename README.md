@@ -16,7 +16,7 @@
 
 ## ✨ Project Overview
 
-The objective of gogaido is to suggest animes for the user based on the comparison of synopses with artificial intelligence, bringing the ones that would be more similar to what was researched.
+The objective of gogaido is to suggest animes for the user based on the comparison of synopses with artificial intelligence, bringing the ones that would be more similar to what was searched.
 
 The project itself was developed to test technologies like Next.js and Tailwind, as well as to put in place a simple yet lean, smooth and functional design.
 
