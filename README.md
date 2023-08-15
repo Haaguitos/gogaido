@@ -1,9 +1,9 @@
-<p align="center">
+![image](https://github.com/Haaguitos/gogaido/assets/62682824/90451392-c7a0-40d0-a5ae-57d2fae74bca)<p align="center">
   <img src="./src/app/icon.png" width="140px" />  
   <h1 align="center">gogaido</h1>
 </p>
 
-![image](https://github.com/Haaguitos/gogaido/assets/62682824/e8cb1245-7333-4586-a547-90fcd8ee5d49)
+![image](https://github.com/Haaguitos/gogaido/assets/62682824/411868c9-6124-4927-9fb8-27e501d0fa3e)
 
 <p align="center">A site that searches animes by comparing synopses and bringing the ones that would be most recommended to the user.</p>
 
