@@ -1,4 +1,4 @@
-![image](https://github.com/Haaguitos/gogaido/assets/62682824/90451392-c7a0-40d0-a5ae-57d2fae74bca)<p align="center">
+<p align="center">
   <img src="./src/app/icon.png" width="140px" />  
   <h1 align="center">gogaido</h1>
 </p>
