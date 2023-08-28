@@ -89,9 +89,11 @@ export function AnimeModal({ isOpen, setIsOpenModal, anime }: AnimeModal) {
                   </h1>
 
                   <div className="flex gap-10">
-                    <span className="text-gray-300 font-semibold dark:text-gray-200">
-                      {returnAiredYears()}
-                    </span>
+                    {anime.data.aired.prop.from.year && (
+                      <span className="text-gray-300 font-semibold dark:text-gray-200">
+                        {returnAiredYears()}
+                      </span>
+                    )}
 
                     <span className="text-gray-300 font-semibold dark:text-gray-200">
                       {anime.data.studios[0]?.name || "None found"}
